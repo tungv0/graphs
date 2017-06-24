@@ -146,8 +146,8 @@ var stocks = [
             url: "http://stockcharts.com/h-sc/ui?s=LMT&p=D&yr=0&mn=2&dy=0&id=p25784410213#image-container"
         },
         {
-            name: "MMM",
-            url: "http://stockcharts.com/h-sc/ui?s=MMM&p=D&yr=0&mn=2&dy=0&id=p85085316915#image-container"
+            name: "JNJ",
+            url: "http://stockcharts.com/h-sc/ui?s=JNJ&p=D&yr=0&mn=2&dy=0&id=p93125844991#image-container"
         }
     ],
     [{
@@ -215,7 +215,73 @@ var stocks = [
             name: "ALB",
             url: "http://stockcharts.com/h-sc/ui?s=ALB&p=D&yr=0&mn=2&dy=0&id=p70487832629#image-container"
         }
+    ],
+    [{
+            name: "RDS/A",
+            url: "http://stockcharts.com/h-sc/ui?s=RDS%2FA&p=D&yr=0&mn=2&dy=0&id=p22884284014#image-container"
+        },
+        {
+            name: "VLO",
+            url: "http://stockcharts.com/h-sc/ui?s=VLO&p=D&yr=0&mn=2&dy=0&id=p79450272578#image-container"
+        },
+        {
+            name: "CXO",
+            url: "http://stockcharts.com/h-sc/ui?s=CXO&p=D&yr=0&mn=2&dy=0&id=p03684954597#image-container"
+        }
+    ],
+    [{
+            name: "CLB",
+            url: "http://stockcharts.com/h-sc/ui?s=CLB&p=D&yr=0&mn=2&dy=0&id=p46889232659#image-container"
+        },
+        {
+            name: "NVDA",
+            url: "http://stockcharts.com/h-sc/ui?s=NVDA&p=D&yr=0&mn=2&dy=0&id=p85752770387#image-container"
+        },
+        {
+            name: "MOH",
+            url: "http://stockcharts.com/h-sc/ui?s=MOH&p=D&yr=0&mn=2&dy=0&id=p63796429826#image-container"
+        }
+    ],
+    [{
+            name: "COPX",
+            url: "http://stockcharts.com/h-sc/ui?s=COPX&p=D&yr=0&mn=2&dy=0&id=p15770757317#image-container"
+        },
+        {
+            name: "XOP",
+            url: "http://stockcharts.com/h-sc/ui?s=XOP&p=D&yr=0&mn=2&dy=0&id=p37401246995#image-container"
+        },
+        {
+            name: "XOM",
+            url: "http://stockcharts.com/h-sc/ui?s=XOM&p=D&yr=0&mn=2&dy=0&id=p41739758834#image-container"
+        }
+    ],
+    [{
+            name: "INCY",
+            url: "http://stockcharts.com/h-sc/ui?s=INCY&p=D&yr=0&mn=2&dy=0&id=p17491249470#image-container"
+        },
+        {
+            name: "COH",
+            url: "http://stockcharts.com/h-sc/ui?s=COH&p=D&yr=0&mn=2&dy=0&id=p21569325962#image-container"
+        },
+        {
+            name: "MMM",
+            url: "http://stockcharts.com/h-sc/ui?s=MMM&p=D&yr=0&mn=2&dy=0&id=p02030115423#image-container"
+        }
+    ],
+    [{
+            name: "PCLN",
+            url: "http://stockcharts.com/h-sc/ui?s=PCLN&p=D&yr=0&mn=2&dy=0&id=p07785501208#image-container"
+        },
+        {
+            name: "MSFT",
+            url: "http://stockcharts.com/h-sc/ui?s=MSFT&p=D&yr=0&mn=2&dy=0&id=p55754914095#image-container"
+        },
+        {
+            name: "AVGO",
+            url: "http://stockcharts.com/h-sc/ui?s=AVGO&p=D&yr=0&mn=2&dy=0&id=p23694002387#image-container"
+        }
     ]
+    
 ]
 
 ReactDOM.render(< App stockList = {stocks}/>, document.getElementById('app'));

@@ -6,6 +6,7 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Stock charts!</h1>
+                <iframe src="https://www.bloomberg.com/markets/earnings-calendar/us#content" sandbox="allow-forms allow-scripts" frameBorder="0" height="385" width="380"></iframe>
                 {this.props.stockList.map( (stockRow) => {
                          return (
                              <StockChart stockList={stockRow} /> 
