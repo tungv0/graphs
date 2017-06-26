@@ -284,4 +284,4 @@ var stocks = [
     
 ]
 
-ReactDOM.render(< App stockList = {stocks}/>, document.getElementById('app'));
+ReactDOM.render(<App stockList = {stocks}/>, document.getElementById('app'));
