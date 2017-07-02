@@ -15,6 +15,10 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
+  "engines": {
+    "node": "8.1.2",
+    "npm": "5.0.4"
+  },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
