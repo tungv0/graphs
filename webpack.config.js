@@ -21,6 +21,7 @@ module.exports = {
     },
     output: {
         filename: 'transformed.js',
+        publicPath: '/',
         path: __dirname + '/build'
     },
     devServer: {
