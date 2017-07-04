@@ -20,9 +20,9 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'transformed.js',
+        path: path.join(__dirname, '/build'),
         publicPath: '/',
-        path: __dirname + '/build'
+        filename: 'transformed.js'
     },
     devServer: {
         contentBase: './build',
