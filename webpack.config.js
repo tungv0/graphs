@@ -9,7 +9,7 @@ var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 module.exports = {
-    entry: __dirname + '/app/index.js',
+    entry: ['./app/index.js'],
     module: {
         loaders: [
             {
@@ -30,6 +30,7 @@ module.exports = {
     },
     plugins: [
         HTMLWebpackPluginConfig,
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
     ]
