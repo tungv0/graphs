@@ -128,8 +128,8 @@ var stocks = [
             url: "http://stockcharts.com/h-sc/ui?s=ILMN&p=D&yr=0&mn=2&dy=0&id=p62735043502#chartImg"
         },
         {
-            name: "YHOO",
-            url: "http://stockcharts.com/h-sc/ui?s=YHOO&p=D&yr=0&mn=2&dy=0&id=p81913325743#chartImg"
+            name: "EXPE",
+            url: "http://stockcharts.com/h-sc/ui?s=EXPE&p=D&yr=0&mn=6&dy=0&id=p42721582702#chartImg"
         },
         {
             name: "AA",
@@ -279,6 +279,19 @@ var stocks = [
         {
             name: "AVGO",
             url: "http://stockcharts.com/h-sc/ui?s=AVGO&p=D&yr=0&mn=2&dy=0&id=p23694002387#chartImg"
+        }
+    ],
+    [{
+            name: "BAC",
+            url: "http://stockcharts.com/h-sc/ui?s=BAC&p=D&yr=0&mn=6&dy=0&id=p41689777031#chartImg"
+        },
+        {
+            name: "JPM",
+            url: "http://stockcharts.com/h-sc/ui?s=JPM&p=D&yr=0&mn=6&dy=0&id=p31113283951#chartImg"
+        },
+        {
+            name: "MS",
+            url: "http://stockcharts.com/h-sc/ui?s=MS&p=D&yr=0&mn=6&dy=0&id=p83921253137#chartImg"
         }
     ]
     
