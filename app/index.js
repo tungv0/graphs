@@ -43,33 +43,6 @@ var stocks = [
         }
     ],
     [{
-            name: "SQM",
-            url: "http://stockcharts.com/h-sc/ui?s=SQM&p=D&yr=0&mn=2&dy=0&id=p88946420254#chartImg"
-        },
-        {
-            name: "FMC",
-            url: "http://stockcharts.com/h-sc/ui?s=FMC&p=D&yr=0&mn=2&dy=0&id=p65351599791#chartImg"
-
-        },
-        {
-            name: "VRTX",
-            url: "http://stockcharts.com/h-sc/ui?s=VRTX&p=D&yr=0&mn=2&dy=0&id=p82551674189#chartImg"
-        }
-    ],
-    [{
-            name: "AYI",
-            url: "http://stockcharts.com/h-sc/ui?s=AYI&p=D&yr=0&mn=2&dy=0&id=p19380760851#chartImg"
-        },
-        {
-            name: "F",
-            url: "http://stockcharts.com/h-sc/ui?s=F&p=D&yr=0&mn=2&dy=0&id=p44830535510#chartImg"
-        },
-        {
-            name: "GM",
-            url: "http://stockcharts.com/h-sc/ui?s=GM&p=D&yr=0&mn=2&dy=0&id=p62826057915#chartImg"
-        }
-    ],
-    [{
             name: "V",
             url: "http://stockcharts.com/h-sc/ui?s=V&p=D&yr=0&mn=2&dy=0&id=p22358143472#chartImg"
         },
@@ -93,21 +66,6 @@ var stocks = [
         {
             name: "TWLO",
             url: "http://stockcharts.com/h-sc/ui?s=TWLO&p=D&yr=0&mn=2&dy=0&id=p92520469070#chartImg"
-        }
-    ],
-    [{
-            name: "FPE",
-            url: "http://stockcharts.com/h-sc/ui?s=FPE&p=D&yr=0&mn=2&dy=0&id=p51520441701#chartImg"
-
-        },
-        {
-            name: "PGX",
-            url: "http://stockcharts.com/h-sc/ui?s=PGX&p=D&yr=0&mn=2&dy=0&id=p50419278403#chartImg"
-
-        },
-        {
-            name: "PSK",
-            url: "http://stockcharts.com/h-sc/ui?s=PSK&p=D&yr=0&mn=2&dy=0&id=p17747377884#chartImg"
         }
     ],
     [{
@@ -190,20 +148,6 @@ var stocks = [
         }
     ],
     [{
-            name: "WFC",
-            url: "http://stockcharts.com/h-sc/ui?s=WFC&p=D&yr=0&mn=2&dy=0&id=p05135978061#chartImg"
-        },
-
-        {
-            name: "CAH",
-            url: "http://stockcharts.com/h-sc/ui?s=CAH&p=D&yr=0&mn=2&dy=0&id=p59631820040#chartImg"
-        },
-        {
-            name: "USB",
-            url: "http://stockcharts.com/h-sc/ui?s=USB&p=D&yr=0&mn=2&dy=0&id=p23252493054#chartImg"
-        }
-    ],
-    [{
             name: "GS",
             url: "http://stockcharts.com/h-sc/ui?s=GS&p=D&yr=0&mn=2&dy=0&id=p98445344774#chartImg"
         },
@@ -214,19 +158,6 @@ var stocks = [
         {
             name: "ALB",
             url: "http://stockcharts.com/h-sc/ui?s=ALB&p=D&yr=0&mn=2&dy=0&id=p70487832629#chartImg"
-        }
-    ],
-    [{
-            name: "RDS/A",
-            url: "http://stockcharts.com/h-sc/ui?s=RDS%2FA&p=D&yr=0&mn=2&dy=0&id=p22884284014#chartImg"
-        },
-        {
-            name: "VLO",
-            url: "http://stockcharts.com/h-sc/ui?s=VLO&p=D&yr=0&mn=2&dy=0&id=p79450272578#chartImg"
-        },
-        {
-            name: "CXO",
-            url: "http://stockcharts.com/h-sc/ui?s=CXO&p=D&yr=0&mn=2&dy=0&id=p03684954597#chartImg"
         }
     ],
     [{
