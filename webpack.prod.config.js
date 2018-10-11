@@ -37,13 +37,13 @@ config.module.loaders.push (
   {
     test: /\.css$/,
     loader: ExtractTextPlugin.extract(
-      combineLoaders([{
+      [{
         loader: 'css-loader',
         query: {
           modules: true,
           localIdentName: '[name]__[local]___[hash:base64:5]'
         }
-      }])
+      }]
     )
   }
 )
