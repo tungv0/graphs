@@ -1,7 +1,6 @@
 const config = require('./webpack.config.js');
 const webpack = require('webpack');
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 config.plugins.push(
@@ -20,10 +19,6 @@ config.plugins.push(
   })
 );
 
-config.plugins.push(
-  new ExtractTextPlugin('styles-[hash].css')
-);
-
 config.plugins.push (
   new webpack.DefinePlugin({
     'process.env': {
@@ -35,15 +30,14 @@ config.plugins.push (
 config.module.loaders.push (
   {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract(
+    loader: 
       [{
         loader: 'css-loader',
         query: {
           modules: true,
           localIdentName: '[name]__[local]___[hash:base64:5]'
         }
-      }]
-    )
+      }]    
   }
 )
 
