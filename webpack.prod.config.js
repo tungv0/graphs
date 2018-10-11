@@ -16,10 +16,7 @@ config.module.loaders.push (
     test: /\.css$/,
     loader: 
       [{
-        loader: 'css-loader',
-        query: {
-          modules: true
-        }
+        loader: 'css-loader'
       }]
   }
 )

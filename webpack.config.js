@@ -23,10 +23,7 @@ module.exports = {
             },
             { 
                 test: /\.css$/, 
-                loader: "css-loader",
-                query: {
-                    modules: true
-                }
+                loader: "css-loader"
             }
         ]
     },
