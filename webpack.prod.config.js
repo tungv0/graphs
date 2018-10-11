@@ -11,14 +11,12 @@ config.plugins.push(
   })
 );
 
-config.module.loaders.push (
-  {
-    test: /\.css$/,
-    loader: 
-      [{
-        loader: 'css-loader'
-      }]
-  }
-)
+config.plugins.push(
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  })
+);
 
 module.exports = config;
