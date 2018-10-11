@@ -25,7 +25,7 @@ class StockRow extends React.Component {
 class StockChart extends React.Component {
     render() {
         return (
-            <div className="col-sm-4">
+            <div className="col-sm-6">
                 <div className={styles.card}>
                     <div className={styles.title}>
                         <i className={styles.fa} aria-hidden="true"></i>

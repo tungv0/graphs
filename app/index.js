@@ -29,7 +29,7 @@ var stocks = [
             url: "http://stockcharts.com/h-sc/ui?s=TSLA&p=D&yr=0&mn=2&dy=0&id=p72720229695#chartImg"
         }
     ],
-    [{
+/*     [{
             name: "NFLX",
             url: "http://stockcharts.com/h-sc/ui?s=NFLX&p=D&yr=0&mn=2&dy=0&id=p57064685951#chartImg"
         },
@@ -224,7 +224,7 @@ var stocks = [
             name: "MS",
             url: "http://stockcharts.com/h-sc/ui?s=MS&p=D&yr=0&mn=6&dy=0&id=p83921253137#chartImg"
         }
-    ]
+    ] */
     
 ]
 

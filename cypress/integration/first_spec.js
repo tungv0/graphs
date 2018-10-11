@@ -8,5 +8,7 @@ describe('My First Test', function() {
   describe('My First Graph Test', function() {
     it('Visits Stock Graphs Page', function() {
       cy.visit('http://localhost:8080')
+
+      cy.contains('')
     })
   })
