@@ -1,6 +1,8 @@
 var fs = require('fs');
 const path = require('path');
 const express = require('express');
+const bGround = require('fcc-express-bground');
+const myApp = require('./myApp');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -49,8 +51,12 @@ app.use(function(err, req, res, next) {
   }
 })
 
-app.listen(PORT, error => {
-  error
-  ? console.error(error)
-  : console.info(`==> 🌎 Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`)
+// app.listen(PORT, error => {
+//   error
+//   ? console.error(error)
+//   : console.info(`==> 🌎 Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`)
+// });
+
+bGround.setupBackgroundApp(app, myApp, __dirname).listen(port, function(){
+  bGround.log('Node is listening on port '+ port + '...')
 });
