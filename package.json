@@ -1,7 +1,7 @@
 {
   "name": "graphs",
   "version": "1.0.0",
-  "description": "",
+  "description": "A play node app",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Tung Vo",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.25.0",
