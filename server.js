@@ -57,6 +57,6 @@ app.use(function(err, req, res, next) {
 //   : console.info(`==> 🌎 Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`)
 // });
 
-bGround.setupBackgroundApp(app, myApp, __dirname).listen(port, function(){
-  bGround.log('Node is listening on port '+ port + '...')
+bGround.setupBackgroundApp(app, myApp, __dirname).listen(PORT, function(){
+  bGround.log('Node is listening on port '+ PORT + '...')
 });
