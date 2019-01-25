@@ -1,7 +1,7 @@
-var fs = require('fs');
+const fs = require('fs');
 const path = require('path');
-const express = require('express');
 const bGround = require('fcc-express-bground');
+const express = require('express');
 const myApp = require('./myApp');
 const app = express();
 const PORT = process.env.PORT || 8080;
