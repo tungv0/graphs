@@ -61,7 +61,7 @@ app.get('/now',
 );
 
 /** 9)  Get input from client - Route parameters */
-app.get('/echo/:word',
+app.get('/:word/echo',
     function(request, response) {
         console.log(`${request.method} ${request.path} - ${request.params}`);
         response.send({echo: request.params.word});
