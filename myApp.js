@@ -5,7 +5,12 @@ const app = express();
 
 
 // --> 7)  Mount the Logger middleware here
-
+app.use(
+    function(request, response, next) {
+        console.log(`${request.method} ${request.path} - ${request.ip}`);
+        next();
+    }
+)
 
 // --> 11)  Mount the body-parser middleware  here
 
