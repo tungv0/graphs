@@ -6,7 +6,7 @@ const myApp = require('./myApp');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
