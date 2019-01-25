@@ -10,7 +10,7 @@ app.use(
         console.log(`${request.method} ${request.path} - ${request.ip}`);
         next();
     }
-)
+);
 
 // --> 11)  Mount the body-parser middleware  here
 
@@ -49,7 +49,16 @@ app.get('/json', function(request, response) {
 
 
 /** 8) Chaining middleware. A Time server */
-
+app.get('/now', 
+    function(request, response, next) {
+        request.time = new Date().toString();
+        console.log(`${request.method} ${request.path} - ${request.time}`);
+        next();
+    },
+    function(request, response) {
+        response.send({time: request.time});
+    }
+);
 
 /** 9)  Get input from client - Route parameters */
 
