@@ -6,7 +6,7 @@ const myApp = require('./myApp');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -25,7 +25,7 @@ if (!process.env.DISABLE_XORIGIN) {
 //   response.sendFile(__dirname + '/build/index.html');
 // });
 
-app.use('/public', express.static(process.cwd() + '/public'));
+// app.use('/public', express.static(process.cwd() + '/public'));
 
 app.route('/_api/package.json')
   .get(function(req, res, next) {
