@@ -28,7 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /** 5) serve JSON on a specific route */
 app.get('/json', function(request, response) {
-    response.json({"message": "Hello json"});
+    let message = "Hello json";
+    
+    message = process.env.MESSAGE_STYLE == "uppercase" ? message.toUpperCase() : message;
+    response.json({"message": message});
 });
 
 /** 6) Use the .env file to configure the app */
