@@ -61,7 +61,12 @@ app.get('/now',
 );
 
 /** 9)  Get input from client - Route parameters */
-
+app.get('/echo/:word',
+    function(request, repsonse) {
+        console.log(`${request.method} ${request.path} - ${request.params}`);
+        response.send({echo: request.params.word});
+    }
+);
 
 /** 10) Get input from client - Query parameters */
 // /name?first=<firstname>&last=<lastname>
