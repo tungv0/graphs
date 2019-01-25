@@ -18,7 +18,9 @@ app.get('/', function(request, response) {
 });
 
 /** 3) Serve an HTML file */
-
+app.get('/', function(request, response) {
+    response.sendFile(__dirname + '/views/index.html');
+});
 
 /** 4) Serve static assets  */
 
