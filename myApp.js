@@ -27,7 +27,9 @@ app.get('/', function(request, response) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 /** 5) serve JSON on a specific route */
-
+app.get('/json', function(request, response) {
+    response.json({"message": "Hello json"});
+});
 
 /** 6) Use the .env file to configure the app */
  
