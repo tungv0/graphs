@@ -23,7 +23,7 @@ app.get('/', function(request, response) {
 });
 
 /** 4) Serve static assets  */
-
+app.use(express.static(path.join(__dirname, 'build')));
 
 /** 5) serve JSON on a specific route */
 
