@@ -21,9 +21,9 @@ if (!process.env.DISABLE_XORIGIN) {
   });
 }
 
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/build/index.html');
-});
+// app.get('/', function(request, response) {
+//   response.sendFile(__dirname + '/build/index.html');
+// });
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
