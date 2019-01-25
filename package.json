@@ -20,7 +20,9 @@
     "bootstrap": "^4.2.1",
     "cookie-parser": "^1.4.3",
     "css-loader": "^1.0.1",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git",
     "html-webpack-plugin": "^2.29.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6",
@@ -29,8 +31,7 @@
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^2.7.0",
-    "webpack-cli": "^3.2.1",
-    "fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git"
+    "webpack-cli": "^3.2.1"
   },
   "engines": {
     "node": "8.1.2",
