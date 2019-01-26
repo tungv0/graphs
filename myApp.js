@@ -8,7 +8,7 @@ var name = '';
 // --> 7)  Mount the Logger middleware here
 app.use(
     function(request, response, next) {
-        console.log(`${JSON.stringify(request)}`);
+        console.log(`${JSON.stringify(request.header)}`);
         next();
     }
 );
