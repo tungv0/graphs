@@ -97,7 +97,7 @@ app.get('/api/timestamp/:date_string',
 
         try {
             let date = str ? new Date(str) : Date.now();
-            request.send({
+            response.send({
                 "unix": date.getTime(),
                 "utc": date.toUTCString()
             });
