@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 var name = '';
 
@@ -13,7 +14,7 @@ app.use(
 );
 
 // --> 11)  Mount the body-parser middleware  here
-
+app.use(bodyParser.urlencoded({extended: false}));
 
 /** 1) Meet the node console. */
 console.log("Hello World");
