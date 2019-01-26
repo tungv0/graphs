@@ -94,7 +94,18 @@ app.get('/api/timestamp/:date_string',
     function(request, response) {
         console.log(`${request.method} ${request.path} - ${JSON.stringify(request.params)}`);
         let str = request.params.date_string;
-        let date = str ? new Date(str) : Date.now();
+        let date = undefined;
+
+        if (str) {
+            if (str.test(/-/)) { // GMT time string
+                date = new Date(str);
+            } else {             // millisecond time string
+                date = new Date(parseInt(str, 10));
+            }
+        } else { // empty string, use current time.
+            date = Date.now();
+        }
+
 
         if (isNaN(date.getTime())) {
             console.log(`Invalid date: ${str}`);
