@@ -94,17 +94,17 @@ app.get('/api/timestamp/:date_string',
     function(request, response) {
         console.log(`${request.method} ${request.path} - ${JSON.stringify(request.params)}`);
         let str = request.params.date_string;
+        let date = str ? new Date(str) : Date.now();
 
-        try {
-            let date = str ? new Date(str) : Date.now();
-            response.send({
-                "unix": date.getTime(),
-                "utc": date.toUTCString()
-            });
-        } catch (e) {
+        if (isNaN(Date.getTime())) {
             console.log(`Invalid date: ${e}`);
             response.send({"error" : "Invalid Date" });
-        }
+        } 
+            
+        response.send({
+            "unix": date.getTime(),
+            "utc": date.toUTCString()
+        });
     }
 );
 
