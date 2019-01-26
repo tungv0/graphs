@@ -72,12 +72,13 @@ app.get('/:word/echo',
 // /name?first=<firstname>&last=<lastname>
 app.route('/name').get(
     function(request, response) {
-        console.log(`${request.method} ${request.path} - ${name}`);
+        name = request.query.first + ' ' + request.query.last;
+        console.log(`${request.method} ${request.path} - ${request.query}`);
         response.send({name: name});
 }).post(
     function(request, response){
         console.log(`${request.method} ${request.path} - ${request.query}`);
-        name = request.query.first + ' ' + request.query.last;        
+        name = request.query.first + ' ' + request.query.last;
 });
   
 /** 11) Get ready for POST Requests - the `body-parser` */
