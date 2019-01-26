@@ -123,9 +123,8 @@ app.get('/api/timestamp/:date_string',
 app.get('/api/whoami', 
     function(request, response) {
         let headers = request.headers;
-        console.log(`request headers: ${JSON.stringify(headers)}`);
         response.send({
-            ipaddress: headers["x-forward-port"],
+            ipaddress: headers["x-forwarded-for"],
             language: headers["accept-language"],
             software: headers["user-agent"]
         });
