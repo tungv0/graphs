@@ -96,7 +96,7 @@ app.get('/api/timestamp/:date_string',
         let str = request.params.date_string;
         let date = str ? new Date(str) : Date.now();
 
-        if (isNaN(Date.getTime())) {
+        if (isNaN(date.getTime())) {
             console.log(`Invalid date: ${e}`);
             response.send({"error" : "Invalid Date" });
         } 
