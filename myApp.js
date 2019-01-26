@@ -8,7 +8,7 @@ var name = '';
 // --> 7)  Mount the Logger middleware here
 app.use(
     function(request, response, next) {
-        console.log(`${JSON.stringify(request.header)}`);
+        console.log(`${JSON.stringify(request.headers)}`);
         next();
     }
 );
@@ -110,12 +110,12 @@ app.get('/api/timestamp/:date_string',
         if (isNaN(date.getTime())) {
             console.log(`Invalid date: ${str}`);
             response.send({"error" : "Invalid Date" });
-        } 
-            
-        response.send({
-            "unix": date.getTime(),
-            "utc": date.toUTCString()
-        });
+        } else {
+            response.send({
+                "unix": date.getTime(),
+                "utc": date.toUTCString()
+            });
+        }
     }
 );
 
