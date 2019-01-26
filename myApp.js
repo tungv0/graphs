@@ -8,7 +8,7 @@ var name = '';
 // --> 7)  Mount the Logger middleware here
 app.use(
     function(request, response, next) {
-        console.log(`${request.method} ${request.path} (${request.ip}) ${request.params}`);
+        console.log(`${JSON.stringify(request)}`);
         next();
     }
 );
@@ -97,7 +97,7 @@ app.get('/api/timestamp/:date_string',
         let date = undefined;
 
         if (str) {
-            if (str.test(/-/)) { // GMT time string
+            if (/-/.test(str)) { // GMT time string
                 date = new Date(str);
             } else {             // millisecond time string
                 date = new Date(parseInt(str, 10));
