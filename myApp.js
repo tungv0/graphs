@@ -8,7 +8,7 @@ var name = '';
 // --> 7)  Mount the Logger middleware here
 app.use(
     function(request, response, next) {
-        console.log(`${request.method} ${request.path} - ${request.ip}`);
+        console.log(`${request.method} ${request.path} (${request.ip}) ${request.params}`);
         next();
     }
 );
@@ -90,7 +90,23 @@ app.route('/name').get(
 
 
 /** 12) Get data form POST  */
+app.get('/api/timestamp/:date_string', 
+    function(request, response) {
+        console.log(`${request.method} ${request.path} - ${JSON.stringify(request.params)}`);
+        let str = request.params.date_string;
 
+        try {
+            let date = str ? new Date(str) : Date.now();
+            request.send({
+                "unix": date.getTime(),
+                "utc": date.toUTCString()
+            });
+        } catch (e) {
+            console.log(`Invalid date: ${e}`);
+            response.send({"error" : "Invalid Date" });
+        }
+    }
+);
 
 
 // This would be part of the basic setup of an Express app
