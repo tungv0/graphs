@@ -122,7 +122,7 @@ app.get('/api/timestamp/:date_string',
 /** Project 2) whoami  */
 app.get('/api/whoami', 
     function(request, response) {
-        let headers = request.headers();
+        let headers = request.headers;
         console.log(`request headers: ${JSON.stringify(headers)}`);
         response.send({
             ipaddress: headers["x-forward-port"],
