@@ -89,7 +89,7 @@ app.route('/name').get(
 // place it before all the routes !
 
 
-/** 12) Get data form POST  */
+/** Project 1) timestamp server  */
 app.get('/api/timestamp/:date_string', 
     function(request, response) {
         console.log(`${request.method} ${request.path} - ${JSON.stringify(request.params)}`);
@@ -118,6 +118,39 @@ app.get('/api/timestamp/:date_string',
         }
     }
 );
+
+/** Project 2) whoami  */
+app.get('/api/whoami', 
+    function(request, response) {
+        let headers = request.headers();
+        console.log(`request headers: ${JSON.stringify(headers)`);
+        response.send({
+            ipaddress: headers["x-forward-port"],
+            language: headers["accept-language"],
+            software: headers["user-agent"]
+        });
+    }
+);
+
+// {
+//     "host": "ancient-coast-93792.herokuapp.com",
+//     "connection": "close",
+//     "cache-control": "max-age=0",
+//     "upgrade-insecure-requests": "1",
+//     "user-agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/71.0.3578.98 Safari\/537.36",
+//     "accept": "text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8",
+//     "accept-encoding": "gzip, deflate, br",
+//     "accept-language": "en-US,en;q=0.9",
+//     "if-none-match": "W\/\"18-nUKBwp4q2yy3tqbcU8ShNA6o+UQ\"",
+//     "x-request-id": "2c048b45-bace-4fc5-9a8a-d9108fb792e1",
+//     "x-forwarded-for": "67.188.3.125",
+//     "x-forwarded-proto": "https",
+//     "x-forwarded-port": "443",
+//     "via": "1.1 vegur",
+//     "connect-time": "1",
+//     "x-request-start": "1548544691144",
+//     "total-route-time": "0"
+//   }
 
 
 // This would be part of the basic setup of an Express app
