@@ -73,11 +73,11 @@ app.get('/:word/echo',
 app.route('/name').get(
     function(request, response) {
         name = request.query.first + ' ' + request.query.last;
-        console.log(`${request.method} ${request.path} - ${request.query}`);
+        console.log(`${request.method} ${request.path} - ${JSON.stringify(request.query)}`);
         response.send({name: name});
 }).post(
     function(request, response){
-        console.log(`${request.method} ${request.path} - ${request.query}`);
+        console.log(`${request.method} ${request.path} - ${JSON.stringify(request.query)}`);
         name = request.query.first + ' ' + request.query.last;
 });
   
