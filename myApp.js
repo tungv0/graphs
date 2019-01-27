@@ -75,8 +75,12 @@ app.route('/name').get(
     function(request, response) {
         let fullName = '';
 
-        fullName = request.query.first + ' ' + request.query.last;
+        if (request.query.first && request.query.last) {
+            fullName = request.query.first + ' ' + request.query.last;
+        }
+        
         console.log(`${request.method} ${request.path} - ${JSON.stringify(request.query)}`);
+        console.log(`name: ${name}, fullName: ${fullName}`);
         response.send({name: fullName ? fullName : name});
 }).post(
     function(request, response){
