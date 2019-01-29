@@ -168,6 +168,20 @@ app.get('/api/shorturl/:id',
     }
 );
 
+/** Project 5: File Analyzer */
+app.get('api/fileanalyse', 
+    function(request, response) {
+        // {"name":"[DRAFT] SRE Job Descriptions.pdf","type":"application/pdf","size":57066}
+        console.log(request.body);
+
+        response.send({
+            name: '',
+            type: '',
+            size: 0
+        });
+    }
+);
+
 // ph5bbcb351df3bb
 
 // This would be part of the basic setup of an Express app
