@@ -180,6 +180,7 @@ app.post('/api/fileanalyse', type,
         // {"name":"[DRAFT] SRE Job Descriptions.pdf","type":"application/pdf","size":57066}
         console.log(JSON.stringify(request.body));
         console.log(JSON.stringify(request.headers));
+        console.log(JSON.stringify(request.file));
         response.send({
             name: '',
             type: '',
