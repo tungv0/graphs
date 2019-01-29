@@ -25,6 +25,7 @@
     "fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git",
     "html-webpack-plugin": "^2.29.0",
     "jquery": "^3.3.1",
+    "multer": "^1.4.1",
     "popper.js": "^1.14.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
