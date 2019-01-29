@@ -177,14 +177,17 @@ app.get('/api/shorturl/:id',
 /** Project 5: File Analyzer */
 app.post('/api/fileanalyse', type,
     function(request, response) {
-        // {"name":"[DRAFT] SRE Job Descriptions.pdf","type":"application/pdf","size":57066}
-        console.log(JSON.stringify(request.body));
-        console.log(JSON.stringify(request.headers));
         console.log(JSON.stringify(request.file));
+
+        /** {"fieldname":"upfile","originalname":"[DRAFT] SRE Job Descriptions.pdf",
+         * "encoding":"7bit","mimetype":"application/pdf","destination":"upload/",
+         * "filename":"70307ca3d5a644ebd0e61ba38fdca827","path":"upload/70307ca3d5a644ebd0e61ba38fdca827","size":57066} */
+
+        // Response format {"name":"[DRAFT] SRE Job Descriptions.pdf","type":"application/pdf","size":57066}
         response.send({
-            name: '',
-            type: '',
-            size: 0
+            name: request.file.originalname,
+            type: request.file.mimetype,
+            size: request.file.size
         });
     }
 );
