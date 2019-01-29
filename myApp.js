@@ -4,7 +4,8 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer'); // v1.0.5
-const upload = multer(); // for parsing multipart/form-data
+const upload = multer({ dest: 'upload/'}); // for parsing multipart/form-data
+const type = upload.single('upfile');
 
 const app = express();
 var name = '';
@@ -174,7 +175,7 @@ app.get('/api/shorturl/:id',
 );
 
 /** Project 5: File Analyzer */
-app.post('/api/fileanalyse', // upload.array(),
+app.post('/api/fileanalyse', type,
     function(request, response) {
         // {"name":"[DRAFT] SRE Job Descriptions.pdf","type":"application/pdf","size":57066}
         console.log(JSON.stringify(request.body));
