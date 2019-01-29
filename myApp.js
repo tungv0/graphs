@@ -1,4 +1,5 @@
 const fs = require('fs');
+const dns = require('dns');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -143,13 +144,18 @@ app.post('/api/shorturl/new',
         let url = request.body.url;
         let key = Object.keys(shortenedURL).length;
 
-        shortenedURL[key] = url;
-        response.send({
-            original_url: url,
-            short_url: key
-        })
-
-        console.log(`current list of shortened URLs: ${JSON.stringify(shortenedURL)}`);
+        dns.lookup(url, function(err, address){
+            if (err) {
+                response.send({error: "invalid URL"});
+            } else {
+                shortenedURL[key] = url;
+                response.send({
+                    original_url: url,
+                    short_url: key
+                });
+                console.log(`current list of shortened URLs: ${JSON.stringify(shortenedURL)}`);
+            }
+        });
     }
 );
 
