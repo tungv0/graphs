@@ -9,7 +9,7 @@ var shortenedURL = {};
 // --> 7)  Mount the Logger middleware here
 app.use(
     function(request, response, next) {
-        console.log(`${JSON.stringify(request.headers)}`);
+        console.log(`${request.method} ${request.path} - ${request.ip}`);
         next();
     }
 );
@@ -140,7 +140,7 @@ app.get('/api/whoami',
 app.post('/api/shorturl/new',
     function(request, response) {
         console.log(request.body);
-        let url = request.body.original_url;
+        let url = request.body.url;
         let key = Object.keys(shortenedURL).length;
 
         shortenedURL[key] = url;
