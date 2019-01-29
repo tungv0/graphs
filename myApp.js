@@ -143,7 +143,7 @@ app.post('/api/shorturl/new',
         let url = request.body.url;
         let key = Object.keys(shortenedURL).length;
 
-        dns.lookup(url, function(err, address){
+        dns.lookup(url.replace(/(^\w+:|^)\/\//, ''), function(err, address){
             if (err) {
                 console.log(`shorturl invalid URL (${url}): ${err}`);
                 response.send({error: "invalid URL"});
