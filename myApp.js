@@ -3,6 +3,9 @@ const dns = require('dns');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer = require('multer'); // v1.0.5
+const upload = multer(); // for parsing multipart/form-data
+
 const app = express();
 var name = '';
 var shortenedURL = {};
@@ -16,7 +19,9 @@ app.use(
 );
 
 // --> 11)  Mount the body-parser middleware  here
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+// app.use(bodyParser.urlencoded({extended: false}));
 
 /** 1) Meet the node console. */
 console.log("Hello World");
@@ -169,7 +174,7 @@ app.get('/api/shorturl/:id',
 );
 
 /** Project 5: File Analyzer */
-app.post('/api/fileanalyse', 
+app.post('/api/fileanalyse', upload.array(),
     function(request, response) {
         // {"name":"[DRAFT] SRE Job Descriptions.pdf","type":"application/pdf","size":57066}
         console.log(JSON.stringify(request.body));
