@@ -139,13 +139,13 @@ app.get('/api/whoami',
 
 /** Project 3) URL shortener */
 app.post('/api/shorturl/new',
-    function(request, response) {
-        console.log(request.body);
+    function(request, response) {        
         let url = request.body.url;
         let key = Object.keys(shortenedURL).length;
 
         dns.lookup(url, function(err, address){
             if (err) {
+                console.log(`shorturl invalid URL (${url}): ${err}`);
                 response.send({error: "invalid URL"});
             } else {
                 shortenedURL[key] = url;
