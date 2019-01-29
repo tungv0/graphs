@@ -157,10 +157,13 @@ app.get('/api/shorturl/:id',
     function(request, reponse) {
         let url = shortenedURL[request.params.id];
 
-        // TODO: redirect to url
+        console.log(`looking up shortened url ${request.params.id}: ${url}`);
+
+        response.redirect(url);
     }
 );
 
+// ph5bbcb351df3bb
 
 // This would be part of the basic setup of an Express app
 // but to allow FCC to run tests, the server is already active
