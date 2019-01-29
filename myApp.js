@@ -154,11 +154,10 @@ app.post('/api/shorturl/new',
 );
 
 app.get('/api/shorturl/:id', 
-    function(request, reponse) {
+    function(request, response) {
         let url = shortenedURL[request.params.id];
 
         console.log(`looking up shortened url ${request.params.id}: ${url}`);
-
         response.redirect(url);
     }
 );
