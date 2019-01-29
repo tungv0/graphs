@@ -174,7 +174,7 @@ app.get('/api/shorturl/:id',
 );
 
 /** Project 5: File Analyzer */
-app.post('/api/fileanalyse', upload.array(),
+app.post('/api/fileanalyse', // upload.array(),
     function(request, response) {
         // {"name":"[DRAFT] SRE Job Descriptions.pdf","type":"application/pdf","size":57066}
         console.log(JSON.stringify(request.body));
