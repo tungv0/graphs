@@ -7,7 +7,6 @@ const multer = require('multer'); // v1.0.5
 const upload = multer({ dest: 'upload/'}); // for parsing multipart/form-data
 const type = upload.single('upfile');
 
-const mongoose = require('mongoose');
 const app = express();
 
 var name = '';
@@ -209,8 +208,6 @@ app.post('/api/fileanalyse', type,
 // Add `mongodb` and `mongoose` to the project's `package.json`. Then require 
 // `mongoose`. Store your **mLab** database URI in the private `.env` file 
 // as `MONGO_URI`. Connect to the database using `mongoose.connect(<Your URI>)`
-
-console.log(process.env.MONGO_URI);
 mongoose.connect(process.env.MONGO_URI);
 
 /** # SCHEMAS and MODELS #

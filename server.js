@@ -9,6 +9,8 @@ const app = express();
 const router = express.Router();
 const PORT = process.env.PORT || 8080;
 
+const mongoose = require('mongoose');
+
 // app.use(express.static(path.join(__dirname, 'build')));
 
 if (!process.env.DISABLE_XORIGIN) {
