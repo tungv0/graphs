@@ -8,8 +8,9 @@ const upload = multer({ dest: 'upload/'}); // for parsing multipart/form-data
 const type = upload.single('upfile');
 
 const mongoose = require('mongoose');
-
+const router = express.Router();
 const app = express();
+
 var name = '';
 var shortenedURL = {};
 
