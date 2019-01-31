@@ -317,6 +317,7 @@ app.use('/_api', router);
 
 // Error handler
 app.use(function(err, req, res, next) {
+  console.log(`SERVER ERROR: ${err}`);
   if(err) {
     res.status(err.status || 500)
       .type('txt')
@@ -326,6 +327,7 @@ app.use(function(err, req, res, next) {
 
 // Unmatched routes handler
 app.use(function(req, res){
+  console.log(`Unmatched route: ${req.method}`);
   if(req.method.toLowerCase() === 'options') {
     res.end();
   } else {
