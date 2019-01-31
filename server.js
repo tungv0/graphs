@@ -8,6 +8,8 @@ const myApp = require('./myApp');
 const app = express();
 const router = express.Router();
 const PORT = process.env.PORT || 8080;
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URI);
 
 // app.use(express.static(path.join(__dirname, 'build')));
 
