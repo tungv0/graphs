@@ -8,6 +8,7 @@ const upload = multer({ dest: 'upload/'}); // for parsing multipart/form-data
 const type = upload.single('upfile');
 
 const app = express();
+const mongoose = require('mongoose');
 
 var name = '';
 var shortenedURL = {};
@@ -209,6 +210,7 @@ app.post('/api/fileanalyse', type,
 // `mongoose`. Store your **mLab** database URI in the private `.env` file 
 // as `MONGO_URI`. Connect to the database using `mongoose.connect(<Your URI>)`
 
+mongoose.connect(process.env.MONGO_URI);
 
 /** # SCHEMAS and MODELS #
 /*  ====================== */
@@ -235,7 +237,15 @@ app.post('/api/fileanalyse', type,
 
 // <Your code here >
 
-var Person /* = <Your Model> */
+const Schema = mongoose.Schema;
+
+var personSchema = new Schema({
+  name:             { type: String, required: true },
+  age:              { type: Number, default: 0 },
+  favoriteFoods:    [String]
+});
+
+var Person = mongoose.model('Person', personSchema);
 
 // **Note**: GoMix is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
