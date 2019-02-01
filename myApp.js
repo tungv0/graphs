@@ -240,9 +240,7 @@ app.post('/api/fileanalyse', type,
 const Schema = mongoose.Schema;
 
 var personSchema = new Schema({
-  name:             { type: String, required: true },
-  age:              { type: Number, default: 0 },
-  favoriteFoods:    [String]
+  name: String
 });
 
 console.log(`person schema: ${JSON.stringify(personSchema)}`);
