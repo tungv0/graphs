@@ -210,7 +210,7 @@ app.post('/api/fileanalyse', type,
 // `mongoose`. Store your **mLab** database URI in the private `.env` file 
 // as `MONGO_URI`. Connect to the database using `mongoose.connect(<Your URI>)`
 
-mongoose.connect(process.env.MONGO_URI);
+// mongoose.connect(process.env.MONGO_URI);
 
 /** # SCHEMAS and MODELS #
 /*  ====================== */
@@ -245,9 +245,11 @@ var personSchema = new Schema({
   favoriteFoods:    [String]
 });
 
+console.log(`person schema: ${JSON.stringify(personSchema)}`);
+
 var Person = mongoose.model('Person', personSchema);
 
-console.log(JSON.stringify(Person));
+console.log(`person model: ${JSON.stringify(Person)}`);
 
 // **Note**: GoMix is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
