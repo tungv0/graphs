@@ -246,8 +246,9 @@ var personSchema = new Schema({
 });
 
 console.log(`person schema: ${JSON.stringify(personSchema)}`);
+mongoose.model('Person', personSchema);
 
-var Person = mongoose.model('Person', personSchema);
+var Person = mongoose.model('Person');
 
 console.log(`person model: ${JSON.stringify(Person)}`);
 
