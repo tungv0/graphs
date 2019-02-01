@@ -288,7 +288,7 @@ console.log(`person model: ${JSON.stringify(Person)}`);
 // });
 
 var createAndSavePerson = function(done) {
-    var data = new Tank({   name: 'Tung',
+    var data = new Person({   name: 'Tung',
                             age: 30,
                             favoriteFoods: ['Foo', 'Bar']
                         });
