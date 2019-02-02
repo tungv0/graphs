@@ -245,11 +245,10 @@ var personSchema = new Schema({
 
 console.log(`person schema: ${JSON.stringify(personSchema)}`);
 
-var Person = mongoose.model('Person', personSchema);
+var People = mongoose.model('People', personSchema);
 
-//console.log(mongoose.model('Test', new Schema({ test: String})));
-console.log(`person model: ${JSON.stringify(Person)}`);
-console.log(`get Person mondel: ${mongoose.model('Person')}`);
+console.log(`person model: ${People}`);
+console.log(mongoose.model('Person', new Schema({ test: String })));
 
 // **Note**: GoMix is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
@@ -287,7 +286,7 @@ console.log(`get Person mondel: ${mongoose.model('Person')}`);
 // });
 
 var createAndSavePerson = function(done) {
-    var data = new Person({   name: 'Tung',
+    var data = new Person({ name: 'Tung',
                             age: 30,
                             favoriteFoods: ['Foo', 'Bar']
                         });
@@ -295,7 +294,7 @@ var createAndSavePerson = function(done) {
         if (err) return handleError(err);
         // saved!
     });
-  done(null, data);
+    done(null, data);
 };
 
 /** 4) Create many People with `Model.create()` */
