@@ -248,7 +248,7 @@ console.log(`person schema: ${JSON.stringify(personSchema)}`);
 var People = mongoose.model('People', personSchema);
 
 console.log(`person model: ${People}`);
-console.log(mongoose.model('Person', new Schema({ test: String })));
+//console.log(mongoose.model('Person', new Schema({ test: String })));
 
 // **Note**: GoMix is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
@@ -484,7 +484,7 @@ var queryChain = function(done) {
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
 module.exports = app;
-exports.PersonModel = Person;
+exports.PersonModel = People;
 exports.createAndSavePerson = createAndSavePerson;
 exports.findPeopleByName = findPeopleByName;
 exports.findOneByFood = findOneByFood;
