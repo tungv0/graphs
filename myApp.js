@@ -240,14 +240,16 @@ app.post('/api/fileanalyse', type,
 const Schema = mongoose.Schema;
 
 var personSchema = new Schema({
-  name: String
+  name: { type: String, required: true },
+  age: Number,
+  favoriteFoods: [String]
 });
 
 console.log(`person schema: ${JSON.stringify(personSchema)}`);
 
-var People = mongoose.model('People', personSchema);
+var Person = mongoose.model('Person', personSchema);
 
-console.log(People);
+console.log(Person);
 //console.log(mongoose.model('Person', new Schema({ test: String })));
 
 // **Note**: GoMix is a real server, and in real servers interactions with
@@ -484,7 +486,7 @@ var queryChain = function(done) {
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
 module.exports = app;
-exports.PersonModel = People;
+exports.PersonModel = Person;
 exports.createAndSavePerson = createAndSavePerson;
 exports.findPeopleByName = findPeopleByName;
 exports.findOneByFood = findOneByFood;
