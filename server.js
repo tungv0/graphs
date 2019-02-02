@@ -51,7 +51,7 @@ router.get('/is-mongoose-ok', function(req, res) {
 
 var Person = myApp.PersonModel;
 console.log('myApp: ' + myApp);
-console.log('Person: ' + Person);
+console.log('Person: ' + myApp.PersonModel);
 
 
 router.use(function(req, res, next) {
