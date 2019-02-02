@@ -247,7 +247,7 @@ console.log(`person schema: ${JSON.stringify(personSchema)}`);
 
 var People = mongoose.model('People', personSchema);
 
-console.log(`person model: ${People}`);
+console.log(People);
 //console.log(mongoose.model('Person', new Schema({ test: String })));
 
 // **Note**: GoMix is a real server, and in real servers interactions with
