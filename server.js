@@ -50,9 +50,6 @@ router.get('/is-mongoose-ok', function(req, res) {
 
 
 var Person = myApp.PersonModel;
-console.log('myApp: ' + JSON.stringify(myApp.exports));
-console.log('Person: ' + myApp.PersonModel);
-
 
 router.use(function(req, res, next) {
   if(req.method !== 'OPTIONS' && Person.modelName !== 'Person') {
