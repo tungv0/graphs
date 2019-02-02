@@ -50,7 +50,7 @@ router.get('/is-mongoose-ok', function(req, res) {
 
 
 var Person = myApp.PersonModel;
-console.log('myApp: ' + myApp);
+console.log('myApp: ' + JSON.stringify(myApp.exports));
 console.log('Person: ' + myApp.PersonModel);
 
 
