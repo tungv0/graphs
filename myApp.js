@@ -481,7 +481,7 @@ var queryChain = function(done) {
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
 module.exports = app;
-console.log(module.exports);
+console.log(JSON.stringify(module.exports));
 exports.PersonModel = Person;
 exports.createAndSavePerson = createAndSavePerson;
 exports.findPeopleByName = findPeopleByName;
@@ -493,5 +493,6 @@ exports.createManyPeople = createManyPeople;
 exports.removeById = removeById;
 exports.removeManyPeople = removeManyPeople;
 exports.queryChain = queryChain;
-console.log(module.exports);
+console.log('----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------');
+console.log(JSON.stringify(module.exports));
 
