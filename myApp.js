@@ -245,12 +245,7 @@ var personSchema = new Schema({
   favoriteFoods: [String]
 });
 
-console.log(`person schema: ${JSON.stringify(personSchema)}`);
-
 var Person = mongoose.model('Person', personSchema);
-
-console.log(Person);
-//console.log(mongoose.model('Person', new Schema({ test: String })));
 
 // **Note**: GoMix is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
