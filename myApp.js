@@ -482,7 +482,7 @@ var queryChain = function(done) {
 
 module.exports = app;
 console.log(module.exports);
-exports.PersonModel = Person;
+module.exports.PersonModel = Person;
 exports.createAndSavePerson = createAndSavePerson;
 exports.findPeopleByName = findPeopleByName;
 exports.findOneByFood = findOneByFood;
