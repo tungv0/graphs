@@ -335,14 +335,14 @@ app.use(function(req, res){
   }
 });
 
-// app.listen(PORT, error => {
-//   error
-//   ? console.error(error)
-//   : console.info(`==> 🌎 Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`)
-// });
-
-bGround.setupBackgroundApp(app, myApp, __dirname).listen(PORT, function(){
-  bGround.log('Node is listening on port '+ PORT + '...');
+app.listen(PORT, error => {
+  error
+  ? console.error(error)
+  : console.info(`==> 🌎 Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`)
 });
+
+// bGround.setupBackgroundApp(app, myApp, __dirname).listen(PORT, function(){
+//   bGround.log('Node is listening on port '+ PORT + '...');
+// });
 
 
