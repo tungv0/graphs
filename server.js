@@ -68,7 +68,7 @@ router.post('/mongoose-model', function(req, res, next) {
   // try to create a new instance based on their model
   // verify it's correctly defined in some way
   var p;
-  req.body[favoriteFoods] = [].concat(req.body["favoriteFoods[]"]);
+  req.body.favoriteFoods = [].concat(req.body["favoriteFoods[]"]);
   console.log('req.body = ' + JSON.stringify(req.body));
   p = new Person(req.body);
   console.log('person instance = ' + JSON.stringify(p));
