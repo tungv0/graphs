@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const bGround = require('fcc-express-bground');
 const express = require('express');
+const bodyParser = require('body-parser');
 const myApp = require('./myApp');
 const app = express();
 const router = express.Router();
@@ -31,6 +32,12 @@ if (!process.env.DISABLE_XORIGIN) {
 // });
 
 // app.use('/public', express.static(process.cwd() + '/public'));
+
+
+app.use(bodyParser.json()); // for parsing application/json
+//app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 router.get('/file/*?', function(req, res, next) {
   if(req.params[0] === '.env') { return next({status: 401, message: 'ACCESS DENIED'}) }
@@ -62,7 +69,8 @@ router.post('/mongoose-model', function(req, res, next) {
   // verify it's correctly defined in some way
   var p;
   p = new Person(req.body);
-  console.log(JSON.stringify(p), p);
+  console.log('req.body = ' + JSON.stringify(req.body));
+  console.log('person instance = ' + JSON.stringify(p));
   res.json(p);
 });
 
