@@ -49,11 +49,11 @@ router.get('/is-mongoose-ok', function(req, res) {
 });
 
 
-var Person = myApp.PersonModel;
-
+var Person = require('./myApp.js').PersonModel;
 router.use(function(req, res, next) {
   console.log(Person.modelName);
   if(req.method !== 'OPTIONS' && Person.modelName !== 'Person') {
+    console.log('middleware: ' + Person.modelName);
     return next({message: 'Person Model is not correct'});
   }
   next();
