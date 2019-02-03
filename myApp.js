@@ -242,7 +242,7 @@ const Schema = mongoose.Schema;
 var personSchema = new Schema({
   name: { type: String, required: true },
   age: Number,
-  favoriteFoods: [String]
+  "favoriteFoods[]": [String]
 });
 
 var Person = mongoose.model('Person', personSchema);
