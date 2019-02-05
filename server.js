@@ -39,6 +39,10 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({extended: false}));
 
 
+// global setting for safety timeouts to handle possible
+// wrong callbacks that will never be called
+var timeout = 10000;
+
 router.get('/file/*?', function(req, res, next) {
   if(req.params[0] === '.env') { return next({status: 401, message: 'ACCESS DENIED'}) }
   fs.readFile(path.join(__dirname, req.params[0]), function(err, data){
