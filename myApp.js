@@ -306,7 +306,24 @@ var createAndSavePerson = function(done) {
 
 var createManyPeople = function(arrayOfPeople, done) {
     
-    done(null/*, data*/);
+    var data = new Person([{ 
+                                name: 'Tung',
+                                age: 30,
+                                favoriteFoods: ['Foo', 'Bar']},
+                            { 
+                                name: 'Vo',
+                                age: 31,
+                                favoriteFoods: ['Foo', 'Bar']},
+                            { 
+                                name: 'Tan',
+                                age: 32,
+                                favoriteFoods: ['Foo', 'Bar']},
+                        ]);
+    data.save(function (err) {
+        if (err) return handleError(err);
+        // saved!
+    });
+    done(null, data);
     
 };
 
