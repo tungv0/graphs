@@ -90,10 +90,14 @@ router.get('/create-and-save-person', function(req, res, next) {
       console.log('Missing `done()` argument');
       return next({message: 'Missing callback argument'});
     }
+    console.log(JSON.stringify(data));
      Person.findById(data._id, function(err, pers) {
        if(err) { return (next(err)); }
+       console.log('createPerson: ' + pers);
        res.json(pers);
-       pers.remove();
+       if (pers) {
+         pers.remove();
+       }
      });
   });
 });

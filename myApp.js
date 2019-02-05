@@ -287,8 +287,7 @@ var Person = mongoose.model('Person', personSchema);
 var createAndSavePerson = function(done) {
     var data = new Person({ name: 'Tung',
                             age: 30,
-                            favoriteFoods: ['Foo', 'Bar']
-                        });
+                            favoriteFoods: ['Foo', 'Bar']});
     data.save(function (err) {
         if (err) return handleError(err);
         // saved!
