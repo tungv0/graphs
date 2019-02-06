@@ -306,7 +306,7 @@ var createAndSavePerson = function(done) {
 
 var createManyPeople = function(arrayOfPeople, done) {
     console.log(JSON.stringify(arrayOfPeople));
-    var data = new Person([arrayOfPeople);
+    var data = new Person(arrayOfPeople);
     data.save(function (err) {
         if (err) return done(err);
         // saved!
