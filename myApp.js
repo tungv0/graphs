@@ -306,12 +306,11 @@ var createAndSavePerson = function(done) {
 
 var createManyPeople = function(arrayOfPeople, done) {
     console.log(JSON.stringify(arrayOfPeople));
-    var data = new Person(arrayOfPeople);
-    data.save(function (err) {
+    Person.create(arrayOfPeople, function (err, data) {
         if (err) return done(err);
         // saved!
-    });
-    done(null, data);
+        done(null, data);
+    });  
 };
 
 /** # C[R]UD part II - READ #
