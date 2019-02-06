@@ -305,26 +305,13 @@ var createAndSavePerson = function(done) {
 // 'arrayOfPeople'.
 
 var createManyPeople = function(arrayOfPeople, done) {
-    
-    var data = new Person([{ 
-                                name: 'Tung',
-                                age: 30,
-                                favoriteFoods: ['Foo', 'Bar']},
-                            { 
-                                name: 'Vo',
-                                age: 31,
-                                favoriteFoods: ['Foo', 'Bar']},
-                            { 
-                                name: 'Tan',
-                                age: 32,
-                                favoriteFoods: ['Foo', 'Bar']},
-                        ]);
+    console.log(JSON.stringify(arrayOfPeople));
+    var data = new Person([arrayOfPeople);
     data.save(function (err) {
         if (err) return done(err);
         // saved!
     });
     done(null, data);
-    
 };
 
 /** # C[R]UD part II - READ #
