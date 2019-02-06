@@ -82,7 +82,7 @@ router.post('/mongoose-model', function(req, res, next) {
 var createPerson = require('./myApp.js').createAndSavePerson;
 router.get('/create-and-save-person', function(req, res, next) {
   // in case of incorrect function use wait timeout then respond
-  var t = setTimeout(() => { next({message: 'timeout'}) }, timeout);
+  var t = setTimeout(() => { next({message: 'createAndSavePerson timeout'}) }, timeout);
   createPerson(function(err, data) {
     clearTimeout(t);
     if(err) { return (next(err)); }
@@ -144,7 +144,7 @@ router.post('/find-all-by-name', function(req, res, next) {
 
 var findByFood = require('./myApp.js').findOneByFood;
 router.post('/find-one-by-food', function(req, res, next) {
-  var t = setTimeout(() => { next({message: 'timeout'}) }, timeout);
+  var t = setTimeout(() => { next({message: 'findOneByFood timeout'}) }, timeout);
   var p = new Person(req.body);
   p.save(function(err, pers) {
     if(err) { return next(err) }
@@ -163,7 +163,7 @@ router.post('/find-one-by-food', function(req, res, next) {
 
 var findById = require('./myApp.js').findPersonById;
 router.get('/find-by-id', function(req, res, next) {
-  var t = setTimeout(() => { next({message: 'timeout'}) }, timeout);
+  var t = setTimeout(() => { next({message: 'findPersonById timeout'}) }, timeout);
   var p = new Person({name: 'test', age: 0, favoriteFoods: ['none']});
   p.save(function(err, pers) {
     if(err) { return next(err) }

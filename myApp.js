@@ -289,7 +289,7 @@ var createAndSavePerson = function(done) {
                             age: 30,
                             favoriteFoods: ['Foo', 'Bar']});
     data.save(function (err) {
-        if (err) return handleError(err);
+        if (err) return done(err);
         // saved!
     });
     done(null, data);
@@ -320,7 +320,7 @@ var createManyPeople = function(arrayOfPeople, done) {
                                 favoriteFoods: ['Foo', 'Bar']},
                         ]);
     data.save(function (err) {
-        if (err) return handleError(err);
+        if (err) return done(err);
         // saved!
     });
     done(null, data);
