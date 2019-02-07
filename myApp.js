@@ -325,7 +325,7 @@ var createManyPeople = function(arrayOfPeople, done) {
 // Use the function argument `personName` as search key.
 
 var findPeopleByName = function(personName, done) {
-  console.log(JSON.stringify(personName));
+  //console.log(JSON.stringify(personName));
   Person.find({name: personName}, function(err, data) {
     if (err) return done(err);
     // saved!
@@ -343,7 +343,7 @@ var findPeopleByName = function(personName, done) {
 // argument `food` as search key
 
 var findOneByFood = function(food, done) {
-    console.log(JSON.stringify(food));
+    //console.log(JSON.stringify(food));
     Person.findOne({favoriteFoods: food}, function(err, data) {
       if (err) return done(err);
       // saved!

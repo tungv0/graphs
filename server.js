@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // global setting for safety timeouts to handle possible
 // wrong callbacks that will never be called
-var timeout = 10000;
+var timeout = 50000;
 
 router.get('/file/*?', function(req, res, next) {
   if(req.params[0] === '.env') { return next({status: 401, message: 'ACCESS DENIED'}) }
@@ -146,8 +146,10 @@ var findByFood = require('./myApp.js').findOneByFood;
 router.post('/find-one-by-food', function(req, res, next) {
   var t = setTimeout(() => { next({message: 'findOneByFood timeout'}) }, timeout);
   var p = new Person(req.body);
+  
   p.save(function(err, pers) {
     if(err) { return next(err) }
+    console.log(JSON.stringify(pers));
     findByFood(pers.favoriteFoods[0], function(err, data) {
       clearTimeout(t);
       if(err) { return next(err) }
