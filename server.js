@@ -145,6 +145,8 @@ router.post('/find-all-by-name', function(req, res, next) {
 var findByFood = require('./myApp.js').findOneByFood;
 router.post('/find-one-by-food', function(req, res, next) {
   var t = setTimeout(() => { next({message: 'findOneByFood timeout'}) }, timeout);
+
+  req.body.favoriteFoods = [].concat(req.body["favoriteFoods[]"]);
   var p = new Person(req.body);
 
   console.log(JSON.stringify(req.body));
