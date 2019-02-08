@@ -343,7 +343,7 @@ var findPeopleByName = function(personName, done) {
 // argument `food` as search key
 
 var findOneByFood = function(food, done) {
-    //console.log(JSON.stringify(food));
+    console.log('findOneByFood: ' + food);
     Person.findOne({favoriteFoods: food}, function(err, data) {
       if (err) return done(err);
       // saved!

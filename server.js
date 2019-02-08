@@ -146,6 +146,8 @@ var findByFood = require('./myApp.js').findOneByFood;
 router.post('/find-one-by-food', function(req, res, next) {
   var t = setTimeout(() => { next({message: 'findOneByFood timeout'}) }, timeout);
   var p = new Person(req.body);
+
+  console.log(JSON.stringify(req.body));
   
   p.save(function(err, pers) {
     if(err) { return next(err) }
