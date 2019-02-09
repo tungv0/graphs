@@ -402,10 +402,13 @@ var findEditThenSave = function(personId, done) {
         if (err) return done(err);
 
         person.favoriteFoods.push(foodToAdd);
-        console.log(JSON.stringify(person.favoriteFoods));
+        console.log('Found person' + personId + ' and favorite foods = ' + JSON.stringify(person.favoriteFoods));
         
         person.save(function (err) {
-            if (err) return done(err);
+            if (err) {
+                console.log("Error updating " + personId + " error: " + err);
+                return done(err);
+            }
             // saved!
         });
         done(null, person);
