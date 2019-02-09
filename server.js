@@ -215,6 +215,8 @@ router.post('/find-edit-save', function(req, res, next) {
 var update = require('./myApp.js').findAndUpdate;
 router.post('/find-one-update', function(req, res, next) {
   var t = setTimeout(() => { next({message: 'timeout'}) }, timeout);
+  
+  req.body.favoriteFoods = [].concat(req.body["favoriteFoods[]"]);
   var p = new Person(req.body);
   p.save(function(err, pers) {
     if(err) { return next(err) }
