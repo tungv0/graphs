@@ -605,7 +605,7 @@ app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }));
 
 // Use `helmet.xssFilter()`
 
-app.use(helmet.xxFilter());
+app.use(helmet.xssFilter());
 
 /** 5) Avoid inferring the response MIME type - `helmet.noSniff()` */
 
