@@ -432,7 +432,7 @@ var findEditThenSave = function(personId, done) {
 // passes the unmodified object to its callback.
 
 var findAndUpdate = function(personName, done) {
-  var ageToSet = 20;
+    var ageToSet = 20;
 
     console.log('findAndUpdate: ' + personName);
     Person.findOneAndUpdate({name: personName}, {age: ageToSet}, 
@@ -457,9 +457,16 @@ var findAndUpdate = function(personName, done) {
 // As usual, use the function argument `personId` as search key.
 
 var removeById = function(personId, done) {
-  
-  done(null/*, data*/);
-    
+    console.log('removeById: ' + personId);
+
+    Person.findByIdAndRemove(personId, function(err, data) {
+        if (err) {
+            console.log("Error removing " + personId + " error: " + err);
+            return done(err);
+        }
+        console.log(JSON.stringify(data));
+        done(null, data);
+    });
 };
 
 /** 11) Delete many People */
@@ -473,9 +480,17 @@ var removeById = function(personId, done) {
 // Don't forget to pass it to the `done()` callback, since we use it in tests.
 
 var removeManyPeople = function(done) {
-  var nameToRemove = "Mary";
+    var nameToRemove = "Mary";
+    console.log('removeManyPeople: ' + nameToRemove);
 
-  done(null/*, data*/);
+    Person.remove({name: nameToRemove}, function(err, data){
+        if (err) {
+            console.log("Error removing " + nameToRemove + " error: " + err);
+            return done(err);
+        }
+        console.log(JSON.stringify(data));
+        done(null, data);
+    });
 };
 
 /** # C[R]UD part V -  More about Queries # 
