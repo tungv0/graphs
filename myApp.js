@@ -512,9 +512,21 @@ var removeManyPeople = function(done) {
 // passing the `done(err, data)` callback to it.
 
 var queryChain = function(done) {
-  var foodToSearch = "burrito";
-  
-  done(null/*, data*/);
+    var foodToSearch = "burrito";
+    console.log('queryChain: ' + foodToSearch);
+
+    Person.find({favoriteFoods: foodToSearch})
+            .sort('name')
+            .limit(2)
+            .select('-age')
+            .exec(function(err, data){
+                if (err) {
+                    console.log("Error queryChain " + foodToSearch + " error: " + err);
+                    return done(err);
+                }
+                console.log(JSON.stringify(data));
+                done(null, data);
+            });
 };
 
 /** **Well Done !!**
