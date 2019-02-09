@@ -605,7 +605,7 @@ app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }));
 
 // Use `helmet.xssFilter()`
 
-
+app.use(helmet.xxFilter());
 
 /** 5) Avoid inferring the response MIME type - `helmet.noSniff()` */
 
@@ -618,7 +618,7 @@ app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }));
 
 // Use `helmet.noSniff()`
 
-
+app.use(helmet.noSniff());
 
 /** 6) Prevent IE from opening *untrusted* HTML - `helmet.ieNoOpen()` */
 
@@ -631,7 +631,7 @@ app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }));
 
 // Use `helmet.ieNoOpen()`
 
-
+app.use(helmet.ieNoOpen());
 
 /**  7) Ask browsers to access your site via HTTPS only - `helmet.hsts()` */
 
@@ -651,6 +651,7 @@ app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }));
 
 var ninetyDaysInMilliseconds = 90*24*60*60*1000;
 
+app.use(helmet.hsts({maxAge: ninetyDaysInMilliseconds, force: true}));
 
 //**Note**:
 // Configuring HTTPS on a custom website requires the acquisition of a domain,
@@ -669,7 +670,7 @@ var ninetyDaysInMilliseconds = 90*24*60*60*1000;
 
 // Use `helmet.dnsPrefetchControl()`
 
-
+app.use(helmet.dnsPrefetchControl());
 
 /** 9) Disable Client-Side Caching - `helmet.noCache()` */
 
@@ -681,7 +682,7 @@ var ninetyDaysInMilliseconds = 90*24*60*60*1000;
 
 // Use helmet.noCache()
 
-
+app.use(helmet.noCache());
 
 /** 10) Content Security Policy - `helmet.contentSecurityPolicy()` */
 
