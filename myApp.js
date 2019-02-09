@@ -404,14 +404,15 @@ var findEditThenSave = function(personId, done) {
         person.favoriteFoods.push(foodToAdd);
         console.log('Found person' + personId + ' and favorite foods = ' + JSON.stringify(person.favoriteFoods));
         
-        person.save(function (err) {
+        person.markModified('favoriteFoods');
+        person.save(function (err, data) {
             if (err) {
                 console.log("Error updating " + personId + " error: " + err);
                 return done(err);
             }
             // saved!
+            done(null, data);
         });
-        done(null, person);
     });
 };
 
