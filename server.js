@@ -189,6 +189,8 @@ router.get('/find-by-id', function(req, res, next) {
 var findEdit = require('./myApp.js').findEditThenSave;
 router.post('/find-edit-save', function(req, res, next) {
   var t = setTimeout(() => { next({message: 'timeout'}) }, timeout);
+
+  req.body.favoriteFoods = [].concat(req.body["favoriteFoods[]"]);
   var p = new Person(req.body);
   p.save(function(err, pers) {
     if(err) { return next(err) }
