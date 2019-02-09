@@ -23,6 +23,7 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git",
+    "helmet": "^3.15.0",
     "html-webpack-plugin": "^2.29.0",
     "jquery": "^3.3.1",
     "mongodb": "^3.1.13",
