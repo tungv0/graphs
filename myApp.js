@@ -9,7 +9,6 @@ const type = upload.single('upfile');
 
 const app = express();
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 
 var name = '';
 var shortenedURL = {};
