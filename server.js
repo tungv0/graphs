@@ -348,6 +348,7 @@ router.post('/query-tools', function(req, res, next) {
 });
 
 app.use('/_api', router);
+app.use('/', myApp);
 
 app.get('/hello', function(req, res){
   var name = req.query.name || 'Guest';
@@ -448,7 +449,7 @@ app.listen(process.env.PORT || 3000, function() {
           console.log('Tests are not valid:');
           console.log(error);
       }
-    }, 1500);
+    }, 2500);
   }
 });
 

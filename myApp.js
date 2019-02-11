@@ -754,7 +754,7 @@ app.use(helmet.contentSecurityPolicy({directives: {defaultSrc: ["'self'"],
 //   console.log('Your app is listening on port ' + listener.address().port);
 // });
 
-// module.exports = app;
+module.exports = app;
 exports.PersonModel = Person;
 exports.createAndSavePerson = createAndSavePerson;
 exports.findPeopleByName = findPeopleByName;
