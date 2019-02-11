@@ -220,9 +220,22 @@ suite('Functional Tests', function() {
       // ### EXAMPLE ###
       test('#example - submit the input "surname" : "Polo"', function(done) {
         browser
-          .fill('surname', 'Polo');
-          //.pressButton('submit', done);
-        done();
+          .fill('surname', 'Polo')
+          .pressButton('submit', function() {
+            // pressButton is ## Async ##.  
+            // It waits for the ajax call to complete...
+
+            // assert that status is OK 200
+            browser.assert.success();
+            // assert that the text inside the element 'span#name' is 'Marco'
+            browser.assert.text('span#name', 'Marco');
+            // assert that the text inside the element 'span#surname' is 'Polo'
+            browser.assert.text('span#surname', 'Polo');
+            // assert that the element(s) 'span#dates' exist and their count is 1
+            browser.assert.element('span#dates', 1);
+
+            done();   // It's an async test, so we have to call 'done()''
+          });
       });
 
       /** Now it's your turn. Please don't use the keyword #example in the title. **/
