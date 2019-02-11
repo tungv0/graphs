@@ -59,8 +59,8 @@ suite('Unit Tests', function(){
     test('#strictEqual, #notStrictEqual', function(){
       assert.notStrictEqual( 6, '6' );
       assert.strictEqual( 6, 3*2 );
-      assert.notStrictEqual( 6 * '2', 12 );
-      assert.strictEqual( [1, 'a', {} ], [1, 'a', {}] );
+      assert.strictEqual( 6 * '2', 12 );
+      assert.notStrictEqual( [1, 'a', {} ], [1, 'a', {}] );
     });
     /** 7 - .deepEqual(), .notDeepEqual() **/
     // .deepEqual() asserts that two object are deep equal
@@ -153,8 +153,8 @@ suite('Unit Tests', function(){
     // matches the second argument regular expression.
     test('#match, #notMatch', function() {
       var regex =  /^#\sname\:\s[\w\s]+,\sage\:\s\d+\s?$/;
-      assert.fail(formatPeople('John Doe', 35), regex);
-      assert.fail(formatPeople('Paul Smith III', 'twenty-four'), regex);
+      assert.match(formatPeople('John Doe', 35), regex);
+      assert.notMatch(formatPeople('Paul Smith III', 'twenty-four'), regex);
     });
   });
   
