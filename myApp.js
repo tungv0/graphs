@@ -755,15 +755,16 @@ app.use(helmet.contentSecurityPolicy({directives: {defaultSrc: ["'self'"],
 // });
 
 module.exports = app;
-exports.PersonModel = Person;
-exports.createAndSavePerson = createAndSavePerson;
-exports.findPeopleByName = findPeopleByName;
-exports.findOneByFood = findOneByFood;
-exports.findPersonById = findPersonById;
-exports.findEditThenSave = findEditThenSave;
-exports.findAndUpdate = findAndUpdate;
-exports.createManyPeople = createManyPeople;
-exports.removeById = removeById;
-exports.removeManyPeople = removeManyPeople;
-exports.queryChain = queryChain;
+
+// exports.PersonModel = Person;
+// exports.createAndSavePerson = createAndSavePerson;
+// exports.findPeopleByName = findPeopleByName;
+// exports.findOneByFood = findOneByFood;
+// exports.findPersonById = findPersonById;
+// exports.findEditThenSave = findEditThenSave;
+// exports.findAndUpdate = findAndUpdate;
+// exports.createManyPeople = createManyPeople;
+// exports.removeById = removeById;
+// exports.removeManyPeople = removeManyPeople;
+// exports.queryChain = queryChain;
 
