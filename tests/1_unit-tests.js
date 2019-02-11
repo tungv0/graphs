@@ -16,7 +16,7 @@ suite('Unit Tests', function(){
   
     /** 2 - Use assert.isDefined() or assert.isUndefined() to make the tests pass. **/
     test('#isDefined, #isUndefined', function(){
-      assert.isUndefined( null, 'null is not undefined');
+      assert.isDefined( null, 'null is not undefined');
       assert.isUndefined( undefined, 'undefined IS undefined');
       assert.isDefined( 'hello', 'a string is not undefined' );
     });
@@ -82,10 +82,10 @@ suite('Unit Tests', function(){
     
     /** 8 - .isAbove() => a > b , .isAtMost() => a <= b **/
     test('#isAbove, #isAtMost', function() {
-      assert.fail('hello'.length , 5);
-      assert.fail(1, 0);
-      assert.fail(Math.PI, 3);
-      assert.fail(1 - Math.random(), 1);
+      assert.isAtMost('hello'.length , 5);
+      assert.isAbove(1, 0);
+      assert.isAbove(Math.PI, 3);
+      assert.isAtMost(1 - Math.random(), 1);
     });
 
     /** 9 - .isBelow() => a < b , .isAtLeast =>  a >= b **/
