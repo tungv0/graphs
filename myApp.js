@@ -742,17 +742,17 @@ app.use(helmet.contentSecurityPolicy({directives: {defaultSrc: ["'self'"],
 
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
-module.exports = app;
-var api = require('./server.js');
-app.use(express.static('public'));
-app.disable('strict-transport-security');
-app.use('/_api', api);
-app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
-var listener = app.listen(process.env.PORT || 3000, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+// module.exports = app;
+// var api = require('./server.js');
+// app.use(express.static('public'));
+// app.disable('strict-transport-security');
+// app.use('/_api', api);
+// app.get("/", function (request, response) {
+//   response.sendFile(__dirname + '/views/index.html');
+// });
+// var listener = app.listen(process.env.PORT || 3000, function () {
+//   console.log('Your app is listening on port ' + listener.address().port);
+// });
 
 // module.exports = app;
 exports.PersonModel = Person;
