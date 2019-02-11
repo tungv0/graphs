@@ -219,6 +219,7 @@ suite('Functional Tests', function() {
       
       // ### EXAMPLE ###
       test('#example - submit the input "surname" : "Polo"', function(done) {
+        console.log(browser);
         browser
           .fill('surname', 'Polo')
           .pressButton('submit', done);
