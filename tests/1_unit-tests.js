@@ -90,10 +90,10 @@ suite('Unit Tests', function(){
 
     /** 9 - .isBelow() => a < b , .isAtLeast =>  a >= b **/
     test('#isBelow, #isAtLeast', function() {
-      assert.fail('world'.length , 5);
-      assert.fail(2*Math.random(), 0);
-      assert.fail(5 % 2, 2);
-      assert.fail(2/3, 1);
+      assert.isAtLeast('world'.length , 5);
+      assert.isAtLeast(2*Math.random(), 0);
+      assert.isBelow(5 % 2, 2);
+      assert.isBelow(2/3, 1);
     });
 
     /** 10 - .approximately **/
@@ -102,8 +102,8 @@ suite('Unit Tests', function(){
     // Choose the minimum range (3rd parameter) to make the test always pass
     // it should be less than 1
     test('#approximately', function() {
-      assert.approximately(weirdNumbers(0.5) , 1, /*edit this*/ 0 );
-      assert.approximately(weirdNumbers(0.2) , 1, /*edit this*/ 0 );
+      assert.approximately(weirdNumbers(0.5) , 1, 0.5 );
+      assert.approximately(weirdNumbers(0.2) , 1, 0.2 );
     });
   });
 
