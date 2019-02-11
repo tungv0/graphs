@@ -35,7 +35,7 @@ suite('Unit Tests', function(){
     test('#isTrue, #isNotTrue', function(){
       assert.isTrue( true, 'true is true');
       assert.isTrue( !!'double negation', 'double negation of a truthy is true');
-      assert.isNotFalse({ value: 'truthy' }, 'A truthy object is NOT TRUE (neither is false...)' );
+      assert.isNotTrue({ value: 'truthy' }, 'A truthy object is NOT TRUE (neither is false...)' );
     });
   
     // There are more assertions like these: .isNaN(), .isBoolean(), 
