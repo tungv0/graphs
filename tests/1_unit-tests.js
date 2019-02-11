@@ -50,7 +50,7 @@ suite('Unit Tests', function(){
     // .equal() compares objects using '=='
     test('#equal, #notEqual', function(){
       assert.equal( 12, '12', 'numbers are coerced into strings with == ');
-      assert.equal( {value: 1}, {value:1}, '== compares object references');
+      assert.notEqual( {value: 1}, {value:1}, '== compares object references');
       assert.equal( 6 * '2', '12', 'no more hints...');
       assert.notEqual( 6 + '2', '12', 'type your error message if you want' );
     });
@@ -116,14 +116,14 @@ suite('Unit Tests', function(){
     
     /** 11 - #isArray vs #isNotArray **/
     test('#isArray, #isNotArray', function() {
-      assert.fail('isThisAnArray?'.split(''), 'String.prototype.split() returns an Array');
-      assert.fail([1,2,3].indexOf(2), 'indexOf returns a number.');
+      assert.isArray('isThisAnArray?'.split(''), 'String.prototype.split() returns an Array');
+      assert.isNotArray([1,2,3].indexOf(2), 'indexOf returns a number.');
     });
     
     /** 12 - #include vs #notInclude **/
     test('Array #include, #notInclude', function() {
-      assert.fail(winterMonths, 'jul', "It's summer in july...");
-      assert.fail(backendLanguages, 'javascript', 'JS is a backend language !!');
+      assert.notInclude(winterMonths, 'jul', "It's summer in july...");
+      assert.include(backendLanguages, 'javascript', 'JS is a backend language !!');
     });
   });
 
