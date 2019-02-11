@@ -10,57 +10,59 @@
     <link rel="stylesheet" href="style.css">
   </head>
 	<body>
+    <main>
+      <h2>Functional Tests Example</h2>
+      <div class="pane">
+        <h4>Famous Italian Explorers</h4>
+        <form action="/travellers" method="POST" id="f1">
+          <label for="i1">surname: </label>
+          <input id="i1" type="text" name="surname" placeholder="try with 'Polo'...">
+          <button type="submit">submit</button>
+        </form>
+        <div id="tn"></div>
+      </div>
+      <div class="pane">
+        <p class="specs">
+          Input form HTML:<br>
+          ----------------<br>
+          &lt;input type="text" name="surname"&gt;<br>
+          &lt;button type="submit"&gt;submit&lt;/button&gt;<br>
+          <br>
+          Results div HTML (after Ajax):<br>
+          ------------------------------<br>
+          &lt;p&gt;first name:&lt;span id="name"&gt;[name]&lt;/span&gt;&lt;/p&gt;<br>
+          &lt;p&gt;last name:&lt;span id="surname"&gt;[surname]&lt;/span&gt;&lt;/p&gt;<br>
+          &lt;p&gt;dates:&lt;span id="dates"&gt;[birth - death]&lt;/span&gt;&lt;/p&gt;<br>
+        </p>
+      </div>
+    </main>
+
 		<h1>Hello, HTML.</h1>
 		<p>Do not use until Challenge #12</p>
-     <form action="/name" method="post">
+    <form action="/name" method="post">
       <label>First Name :</label>
       <input type="text" name="first" value="John"><br>
       <label>Last Name :</label>
       <input type="text" name="last" value="Doe"><br><br>
       <input type="submit" value="Submit">
-	</form> 
+	  </form> 
 	
-	<h3>Short URL Creation </h3>
-        <p>
-          example: <code>POST [project_url]/api/shorturl/new</code> - <code>https://www.google.com</code>
-        </p>
-        <form action="api/shorturl/new" method="POST">
-          <label for="url_input">URL to be shortened</label>
-          <input id="url_input" type="text" name="url" value="https://www.freecodecamp.com">
-          <input type="submit" value="POST URL">
+	  <h3>Short URL Creation </h3>
+    <p>
+      example: <code>POST [project_url]/api/shorturl/new</code> - <code>https://www.google.com</code>
+    </p>
+    <form action="api/shorturl/new" method="POST">
+      <label for="url_input">URL to be shortened</label>
+      <input id="url_input" type="text" name="url" value="https://www.freecodecamp.com">
+      <input type="submit" value="POST URL">
 		</form>
 		
-	<h3>File Analyzer Upload </h3>		
-		<form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
-            <input id="inputfield" type="file" name="upfile">
-            <input id="button" type="submit" value="Upload">
-          </form>
+    <h3>File Analyzer Upload </h3>		
+    <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
+      <input id="inputfield" type="file" name="upfile">
+      <input id="button" type="submit" value="Upload">
+    </form>
 	</body>
-  <main>
-    <h2>Functional Tests Example</h2>
-    <div class="pane">
-      <h4>Famous Italian Explorers</h4>
-      <form action="/travellers" method="POST" id="f1">
-        <label for="i1">surname: </label>
-        <input id="i1" type="text" name="surname" placeholder="try with 'Polo'...">
-        <button type="submit">submit</button>
-      </form>
-      <div id="tn"></div>
-    </div>
-    <div class="pane">
-      <p class="specs">
-        Input form HTML:<br>
-        ----------------<br>
-        &lt;input type="text" name="surname"&gt;<br>
-        &lt;button type="submit"&gt;submit&lt;/button&gt;<br>
-        <br>
-        Results div HTML (after Ajax):<br>
-        ------------------------------<br>
-        &lt;p&gt;first name:&lt;span id="name"&gt;[name]&lt;/span&gt;&lt;/p&gt;<br>
-        &lt;p&gt;last name:&lt;span id="surname"&gt;[surname]&lt;/span&gt;&lt;/p&gt;<br>
-        &lt;p&gt;dates:&lt;span id="dates"&gt;[birth - death]&lt;/span&gt;&lt;/p&gt;<br>
-      </p>
-    </div>
-  </main>
+
   <script src='/client.js'></script>
 </html>
