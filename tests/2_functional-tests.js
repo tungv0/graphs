@@ -121,7 +121,7 @@ suite('Functional Tests', function() {
        chai.request(server)
         .put('/travellers')
         /** send {surname: 'Colombo'} here **/
-        // .send({...})
+        .send({surname: 'Colombo'})
         .end(function(err, res){
           
           /** your tests here **/
@@ -141,11 +141,24 @@ suite('Functional Tests', function() {
       // Try it again. This time without help !!
       test('send {surname: "da Verrazzano"}', function(done) {
         /** place the chai-http request code here... **/
+        chai.request(server)
+          .put('/travellers')
+          .send({surname: 'da Verrazzano'})
+          .end(function(err, res) {
+            
+            /** your tests here **/
+            assert.equal(res.status, 200, 'response status should be 200');
+            assert.equal(res.type, 'application/json', "Response should be json");
+            
+            // res.body contains the response parsed as a JS object, when appropriate
+            // (i.e the response type is JSON)
+            //assert.equal(res.body.name, 'Cristoforo', 'res.body.name should be "Cristoforo"');
+            assert.equal(res.body.surname, 'da Verrazzano', 'res.body.surname should be "da Verrazzano"' );
+          
+            done();
+
+          })
         
-        /** place your tests inside the callback **/
-        
-        assert.fail(); // remove this after adding tests
-        done();
       });
     });
 
