@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Testing Prototype</title>
     <meta name="description" content="A cool thing made with HyperDev">
@@ -9,7 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
   </head>
-	<body>
+  <body>
+    <header>
+      <h1>
+        FCC - QA &amp; Automated Testing
+      </h1>
+    </header>
     <main>
       <h2>Functional Tests Example</h2>
       <div class="pane">
@@ -36,33 +42,6 @@
         </p>
       </div>
     </main>
-
-		<h1>Hello, HTML.</h1>
-		<p>Do not use until Challenge #12</p>
-    <form action="/name" method="post">
-      <label>First Name :</label>
-      <input type="text" name="first" value="John"><br>
-      <label>Last Name :</label>
-      <input type="text" name="last" value="Doe"><br><br>
-      <input type="submit" value="Submit">
-	  </form> 
-	
-	  <h3>Short URL Creation </h3>
-    <p>
-      example: <code>POST [project_url]/api/shorturl/new</code> - <code>https://www.google.com</code>
-    </p>
-    <form action="api/shorturl/new" method="POST">
-      <label for="url_input">URL to be shortened</label>
-      <input id="url_input" type="text" name="url" value="https://www.freecodecamp.com">
-      <input type="submit" value="POST URL">
-		</form>
-		
-    <h3>File Analyzer Upload </h3>		
-    <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
-      <input id="inputfield" type="file" name="upfile">
-      <input id="button" type="submit" value="Upload">
-    </form>
-	</body>
-
-  <script src='/client.js'></script>
+    <script src='/client.js'></script>
+  </body>
 </html>
