@@ -250,8 +250,8 @@ suite('Functional Tests', function() {
         // assert that the text inside the element 'span#name' is 'Cristoforo'
         // assert that the text inside the element 'span#surname' is 'Colombo'
         // assert that the element(s) 'span#dates' exist and their count is 1
-        browser.fill('surname', 'Colombo')
-        browser.pressButton('submit', function() {
+        browser.fill('surname', 'Colombo');
+        browser.pressButton('submit', function(done) {
             
             /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
             
