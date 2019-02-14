@@ -17,7 +17,7 @@ suite('Functional Tests', function() {
     setTimeout(function(){
       assert.isOk('Async test !!');
       done(); /** Call 'done()' when the async operation is completed**/
-    }, 500);   // the function will be executed after 500ms
+    }, 5000);   // the function will be executed after 500ms
   });
   
   // NOTE: The tests having #example in their description string,
@@ -179,7 +179,7 @@ suite('Functional Tests', function() {
 
   // On Gomix we'll use this setting
   /** ### Copy your project's url here  ### **/
-  Browser.site = 'https://sincere-cone.gomix.me'; 
+  Browser.site = 'https://ancient-coast-93792.herokuapp.com'; 
   
   // If you are testing on a local environment replace the line above  with 
   // Browser.localhost('example.com', (process.env.PORT || 3000));
