@@ -289,7 +289,7 @@ suite('Functional Tests', function() {
             // assert that status is OK 200
             browser.assert.success();
             // assert that the text inside the element 'span#name' is 'Cristoforo'
-            browser.assert.text('span#name', 'Cristoforo');
+            browser.assert.text('span#name', 'Amerigo');
             // assert that the text inside the element 'span#surname' is 'Colombo'
             browser.assert.text('span#surname', 'Vespucci');
             // assert that the element(s) 'span#dates' exist and their count is 1
