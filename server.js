@@ -79,8 +79,8 @@ var travellers = function(req, res){
         break;
       case 'vespucci' :
         data = {
-          name: 'Cristoforo',
-          surname: 'Colombo',
+          name: 'Amerigo',
+          surname: 'Vespucci',
           dates: '1454 - 1512'
         };
         break;
@@ -113,14 +113,12 @@ app.get('/_api/get-tests', cors(), function(req, res, next){
     function(req, res, next){
       if(!runner.report) return next();
       var tests = testFilter(runner.report, req.query.type, req.query.n);
-      console.log(tests);
       res.json(tests);
     },
     function(req, res){
       runner.on('done', function(report){
         process.nextTick(() => {
           var tests = testFilter(runner.report, req.query.type, req.query.n);
-          console.log(tests);
           res.json(tests);
         });
     });
