@@ -241,7 +241,7 @@ suite('Functional Tests', function() {
       /** Now it's your turn. Please don't use the keyword #example in the title. **/
       
       test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
-        console.log('outside: ' + done);
+        
         // fill the form...
         // then submit it pressing 'submit' button.
         //
@@ -251,7 +251,8 @@ suite('Functional Tests', function() {
         // assert that the text inside the element 'span#surname' is 'Colombo'
         // assert that the element(s) 'span#dates' exist and their count is 1
         browser.fill('surname', 'Colombo');
-        browser.pressButton('submit', function(done) {
+        console.log('outside: ' + done);
+        browser.pressButton('submit', function() {
             
             /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
             
