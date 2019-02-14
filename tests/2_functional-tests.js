@@ -284,7 +284,7 @@ suite('Functional Tests', function() {
             /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
             
             // pressButton is Async.  Waits for the ajax call to complete...
-            console.log(browser.source);
+            //console.log(browser.source);
 
             // assert that status is OK 200
             browser.assert.success();
