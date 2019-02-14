@@ -241,7 +241,7 @@ suite('Functional Tests', function() {
       /** Now it's your turn. Please don't use the keyword #example in the title. **/
       
       test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
-
+        console.log('outside: ' + done);
         // fill the form...
         // then submit it pressing 'submit' button.
         //
@@ -256,6 +256,7 @@ suite('Functional Tests', function() {
             /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
             
             // pressButton is Async.  Waits for the ajax call to complete...
+            console.log('inside: ' + done);
 
             // assert that status is OK 200
             browser.assert.success();
