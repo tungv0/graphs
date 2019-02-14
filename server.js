@@ -80,7 +80,7 @@ var travellers = function(req, res){
       case 'vespucci' :
         data = {
           name: 'Cristoforo',
-          surname: 'Vespucci',
+          surname: 'Colombo',
           dates: '1454 - 1512'
         };
         break;
