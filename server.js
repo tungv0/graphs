@@ -112,11 +112,17 @@ app.get('/_api/get-tests', cors(), function(req, res, next){
     },
     function(req, res, next){
       if(!runner.report) return next();
-      res.json(testFilter(runner.report, req.query.type, req.query.n));
+      var tests = testFilter(runner.report, req.query.type, req.query.n);
+      console.log(tests);
+      res.json(tests);
     },
     function(req, res){
       runner.on('done', function(report){
-        process.nextTick(() =>  res.json(testFilter(runner.report, req.query.type, req.query.n)));
+        process.nextTick(() => {
+          var tests = testFilter(runner.report, req.query.type, req.query.n);
+          console.log(tests);
+          res.json(tests);
+        });
     });
 });
 
