@@ -278,13 +278,13 @@ suite('Functional Tests', function() {
             /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
             
             // pressButton is Async.  Waits for the ajax call to complete...
-            //console.log(browser.source);
+            console.log(browser.source);
 
             // assert that status is OK 200
             browser.assert.success();
-            // assert that the text inside the element 'span#name' is 'Cristoforo'
+            // assert that the text inside the element 'span#name' is 'Amerigo'
             browser.assert.text('span#name', 'Amerigo');
-            // assert that the text inside the element 'span#surname' is 'Colombo'
+            // assert that the text inside the element 'span#surname' is 'Vespucci'
             browser.assert.text('span#surname', 'Vespucci');
             // assert that the element(s) 'span#dates' exist and their count is 1
             browser.assert.element('span#dates', 1);
