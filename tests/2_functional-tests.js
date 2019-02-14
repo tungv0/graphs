@@ -221,7 +221,7 @@ suite('Functional Tests', function() {
       test('#example - submit the input "surname" : "Polo"', function(done) {
         browser
           .fill('surname', 'Polo')
-          .pressButton('submit', function() {
+          .pressButton('submit', function(done) {
             // pressButton is ## Async ##.  
             // It waits for the ajax call to complete...
 
@@ -252,7 +252,7 @@ suite('Functional Tests', function() {
         // assert that the element(s) 'span#dates' exist and their count is 1
         browser
           .fill('surname', 'Colombo')
-          .pressButton('submit', function() {
+          .pressButton('submit', function(done) {
             
             /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
             
@@ -282,7 +282,7 @@ suite('Functional Tests', function() {
         // assert that the element(s) 'span#dates' exist and their count is 1
         browser
           .fill('surname', 'Vespucci')
-          .pressButton('submit', function() {
+          .pressButton('submit', function(done) {
             
             /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
             
