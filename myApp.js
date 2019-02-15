@@ -39,12 +39,6 @@ console.log("Hello World");
 //     response.sendFile(__dirname + '/views/index.html');
 // });
 
-// using templating engine
-app.get('/', function(request, response) {
-    console.log(app.locals);
-    response.render('index');
-});
-
 /** 4) Serve static assets  */
 app.use(express.static(path.join(__dirname, 'public')));
 

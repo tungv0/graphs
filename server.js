@@ -53,8 +53,15 @@ router.get('/file/*?', function(req, res, next) {
 });
 
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, '/app/views/pug'));
-app.use('/', myApp);
+app.set('views', path.join(__dirname, '/views/pug'));
+//app.use('/', myApp);
+
+// using templating engine
+app.get('/', function(request, response) {
+  console.log(app.locals);
+  response.render('index');
+});
+
 
 app.get('/hello', function(req, res){
   var name = req.query.name || 'Guest';
