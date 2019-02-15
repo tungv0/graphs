@@ -41,6 +41,7 @@ console.log("Hello World");
 
 // using templating engine
 app.get('/', function(request, response) {
+    console.log(app.locals);
     response.render('index');
 });
 
