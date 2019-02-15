@@ -35,8 +35,13 @@ console.log("Hello World");
 // });
 
 /** 3) Serve an HTML file */
+// app.get('/', function(request, response) {
+//     response.sendFile(__dirname + '/views/index.html');
+// });
+
+// using templating engine
 app.get('/', function(request, response) {
-    response.sendFile(__dirname + '/views/index.html');
+    response.render('/views/pug/index');
 });
 
 /** 4) Serve static assets  */

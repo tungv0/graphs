@@ -52,6 +52,7 @@ router.get('/file/*?', function(req, res, next) {
   });
 });
 
+app.set('view engine', 'pug');
 app.use('/', myApp);
 
 app.get('/hello', function(req, res){
