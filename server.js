@@ -52,9 +52,8 @@ router.get('/file/*?', function(req, res, next) {
   });
 });
 
-
-app.set('views', path.join(__dirname, '/views/pug'));
 app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, '/views/pug'));
 app.use('/', myApp);
 
 app.get('/hello', function(req, res){
