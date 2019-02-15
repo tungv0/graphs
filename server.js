@@ -52,6 +52,8 @@ router.get('/file/*?', function(req, res, next) {
   });
 });
 
+
+app.set('views', './views/pug');
 app.set('view engine', 'pug');
 app.use('/', myApp);
 

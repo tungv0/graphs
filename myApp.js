@@ -41,7 +41,7 @@ console.log("Hello World");
 
 // using templating engine
 app.get('/', function(request, response) {
-    response.render('/views/pug/index');
+    response.render('index');
 });
 
 /** 4) Serve static assets  */
